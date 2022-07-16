@@ -11,8 +11,13 @@ public class A {
   public static void main(String[] args) {
     B b = new B();
     A a = (A) b;
-    System.out.println(
-      a.getName() + "," + b.getName()
-    );
+    try{}
+    catch (Exception e){}
+    finally {
+
+      System.out.println(
+              a.getName() + "," + b.getName()
+      );
+    }
   }
 }

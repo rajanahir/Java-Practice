@@ -6,14 +6,14 @@ import java.util.TreeMap;
 
 import functionalInterface.StringPassword;
 
-public class Test1 {
+public class SumCloserToZero {
 
 //	Find pair of number whose sum is closer to 0
 //	12, -7, 9, -3, 23, 8, -18, 14, 43, -2, 5,25
 
 	public static void main(String[] args) {
 
-		Test1 t = new Test1();
+		SumCloserToZero t = new SumCloserToZero();
 		System.out.println(t.pair());
 		StringPassword a = new StringPassword();
 		System.out.println(a);

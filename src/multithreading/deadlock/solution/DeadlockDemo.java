@@ -1,5 +1,8 @@
 package multithreading.deadlock.solution;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class DeadlockDemo {
     public static void main(String[] args) {
         Object object1 = new Object();
