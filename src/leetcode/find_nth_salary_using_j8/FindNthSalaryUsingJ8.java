@@ -20,7 +20,6 @@ public class FindNthSalaryUsingJ8 {
         Integer salaies = empList.stream().sorted((x,y) -> y.getSalary() - x.getSalary())
                 .map(Employee::getSalary).distinct().skip(2).findFirst().get();
         System.out.println(salaies);
-
-    }
+     }
 
 }
