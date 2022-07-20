@@ -35,19 +35,24 @@ public class AddTwoNumbers {
 	
 	
 		public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-	        String sl1 = nodeValue(l1);
-	        String sl2 = nodeValue(l2);
-	        String sum =  (Integer.parseInt(sl1) + Integer.parseInt(sl2)) + "";
+	        ListNode dummyHead  = new ListNode(0);
+			ListNode curr = dummyHead;
+			int carry = 0;
+			while (l1 != null || l2 != null || carry != 0) {
+				int x = l1 != null ? l1.val: 0;
+				int y = l2 != null ? l2.val: 0;
+				int sum = x + y + carry;
+				carry = sum/10;
+				curr.next = new ListNode( sum % 10);
+				curr = curr.next;
+				if(l1 != null)
+					l1 = l1.next;
+				if(l2 != null)
+					l2 = l2.next;
+
+			}
 	        
-	        ListNode tempN = null;
-	        
-	        for (int i=0; i < sum.length(); i++) {
-	        		if ( i <= 0 ) tempN = new ListNode(Integer.parseInt(sum.charAt(i) + ""));
-	        		else 
-	        			tempN = new ListNode(Integer.parseInt(sum.charAt(i) + ""), tempN);
-	        }
-	        
-	        return tempN;
+	        return dummyHead.next;
 	        
 		}
 
