@@ -2,7 +2,9 @@ package leetcode.find_nth_salary_using_j8;
 
 import leetcode.sort_list_of_employee_using_j8.Employee;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,6 +22,13 @@ public class FindNthSalaryUsingJ8 {
         Integer salaies = empList.stream().sorted((x,y) -> y.getSalary() - x.getSalary())
                 .map(Employee::getSalary).distinct().skip(2).findFirst().get();
         System.out.println(salaies);
+
+        String[] a = {"abc", "def"};
+        String[] b = a.clone();
+
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+
      }
 
 }
