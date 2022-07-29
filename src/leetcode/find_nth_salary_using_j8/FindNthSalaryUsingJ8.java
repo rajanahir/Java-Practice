@@ -29,6 +29,21 @@ public class FindNthSalaryUsingJ8 {
         System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(b));
 
+        System.out.println(abc());
+
      }
+
+    public static int abc() {
+        try {
+            return 1;
+            //int o = 1/0;
+        }
+        catch(Exception e) {
+            return 2;
+        }
+        finally{
+            return 3;
+        }
+    }
 
 }
