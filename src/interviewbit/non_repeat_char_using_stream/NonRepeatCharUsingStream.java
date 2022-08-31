@@ -8,7 +8,18 @@ import java.util.stream.Collectors;
 public class NonRepeatCharUsingStream {
 
     public static void main(String[] args) {
+
+
+        int i2 = 1;
+        for(System.out.print("Hello world");i2<2; System.out.print(" of java"))
+        {
+            i2++;
+        }
+
+
         List list = List.of('a','b','c','d','a','e','b','d','a','b');
+
+        List list1 = List.of('a','a','b','c','c','d');
 
         /**
          * Solution One using Collector.groupingBy
@@ -20,6 +31,13 @@ public class NonRepeatCharUsingStream {
          * Solution Two using Collections.frequency
          */
         System.out.println(solution_2(list));
+
+
+        /**
+         *
+         * Solution Three using Set
+         * */
+        System.out.println(solution_3(list1));
 
 //        String st1 = "abc";
 //        String st2 = new String("abc");
@@ -73,6 +91,21 @@ public class NonRepeatCharUsingStream {
         return list.stream().filter(ifLessThenOrEqualsToOne).toList();
     }
 
+
+    public static List solution_3(List<Character> list) {
+        Set<Character> set = new HashSet();
+        Stack<Character> stack = new Stack<>();
+        //Collections.sort(list);
+        for( Character ch : list) {
+            if(set.add(ch)){
+                stack.add(ch);
+            } else
+                stack.pop();
+        }
+        return stack.stream().toList();
+
+
+    }
 
 
 

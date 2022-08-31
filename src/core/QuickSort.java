@@ -34,7 +34,7 @@ public class QuickSort {
 		
 		int leftPointer = lowIndex;
 		int rightPointer = highIndex;
-		int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;;
+		int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
 		int pivot = number[pivotIndex];
 		swap(number, pivotIndex, highIndex);
 		
