@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public class LongestSutStrWithoutRepeatingChar {
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("bbbbb"));
+        System.out.println(lengthOfLongestSubstring("pwwkew"));
 //        "abcabcbb"
 //        "bbbbb"
 //        ""
@@ -18,25 +18,27 @@ public class LongestSutStrWithoutRepeatingChar {
 
     public static int lengthOfLongestSubstring(String s) {
 
-        Set<Character> uniqueSet = new HashSet();
+        HashSet<Character> hSet = new HashSet<>();
         int max = 0;
-        int start = 0;
-        int end = 0;
+        int i = 0;
+        int j = 0;
 
-        while (end < s.length()) {
-           if(uniqueSet.add(s.charAt(end)))  {
-               end++;
-           }
-           else
-           {
-               max = end - start;
-               start = end;
-               end++;
-               uniqueSet.clear();
-           }
+        while(i<s.length())
+        {
+            if(!hSet.contains(s.charAt(i)))
+            {
+                hSet.add(s.charAt(i));
+                i++;
 
+            }
+            else
+            {
+                max = Math.max(max,hSet.size());
+                hSet.remove(s.charAt(j));
+                j++;
+            }
         }
-
+        max = Math.max(max,hSet.size());
         return max;
     }
 

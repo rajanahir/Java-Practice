@@ -1,15 +1,29 @@
 package core;
 
+import java.util.List;
+
 public class LinkedList {
-	
-	
+
+	public static ListNode print(ListNode head) {
+		ListNode p = null;
+		ListNode c = head;
+		ListNode n = null;
+		while (c != null) {
+			n = c.next;
+			c.next = p;
+			p = c;
+			c = n;
+		}
+		n = p;
+		return n;
+	}
 public static void main(String[] args) {
 		ListNode a = new ListNode();
-		a.val = -1;
+		a.val = 4;
 		ListNode b = new ListNode();
 		b.val = 5;
 		ListNode c = new ListNode();
-		c.val = 3;
+		c.val = 6;
 		ListNode d = new ListNode();
 		d.val = 4;
 		ListNode e = new ListNode();
@@ -21,7 +35,9 @@ public static void main(String[] args) {
 		a.next = b;
 		
 		LinkedList ls = new LinkedList();
-		ls.sortList(a);
+
+		print(a);
+
 				
 }
 	
@@ -54,7 +70,9 @@ public ListNode sortList(ListNode head) {
 	
 	return current;
 }
-	
+
+
+
 
 
 }

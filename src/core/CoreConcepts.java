@@ -1,8 +1,6 @@
 package core;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CoreConcepts {
@@ -13,6 +11,15 @@ public class CoreConcepts {
 		Employee e2 = new Employee(2, 8000000, "Sushil Sharma");
 		Employee e3 = new Employee(3, 7000000, "Kulwant Singh");
 		Employee e4 = new Employee(4, 8000000, "Sandeep Dhanda");
+		Employee e5 = new Employee(1, 9000000, "Rajan Ahir");
+
+		HashMap<Employee, Integer> map_1 = new HashMap<>();
+		map_1.put(e1, 1);
+		map_1.put(e5, 1);
+		System.out.println(map_1.size());
+
+
+
 		List<Employee> list = new ArrayList<Employee>();
 		list.add(e1);
 		list.add(e2);
@@ -74,4 +81,17 @@ class Employee {
 
 	public int salary;
 	public String name;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Employee employee = (Employee) o;
+		return id == employee.id && salary == employee.salary && name.equals(employee.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, salary, name);
+	}
 }
